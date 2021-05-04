@@ -1,0 +1,872 @@
+/*
+--------------------------------------------
+ESTRUTURAÇÃO BASE
+--------------------------------------------
+**** DECLARAÇÃO DE VARIÁVEIS
+**** ESTILOS GERAIS
+**** BODY
+**** HEADER
+**** FOOTER
+**** PÁGINA INICIAL
+**** EXTRAS
+**** @MEDIA
+*/
+
+/* VARIÁVEIS */
+:root{
+    --background_color_column_indicator: #4fdb85;
+}
+/* VARIÁVEIS */
+  
+  
+/* GERAL */
+html, body, figure, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul, ol, li, a, button, form, img, span {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Londrina Solid', cursive;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    width: 90vw;
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* GERAL */
+  
+/* HTML */
+html{}
+/* HTML */
+  
+/* BODY */
+body{
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    background-attachment: fixed;
+    overflow: hidden;
+}    
+
+/* body{
+    min-height: 100vh;
+    background: #e0e0e0
+}     */
+/* BODY */
+  
+/* HEADER */
+header{}
+/* HEADER */
+
+/* INICIAL */
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #content_game {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: inherit;
+    color: #fff;
+    border-radius: 2rem;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+main #content_game:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(250, 250, 250, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+main #content_game #initial h1{
+    width: fit-content;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow:#000 4px -4px, #000 -4px 4px, #000 4px 4px, #000 -4px -4px;
+    transform: rotate(-20deg);
+    color: rgb(169, 156, 248);
+    z-index: 2;
+}
+
+main #content_game #initial h1 span {
+    font-size: 6rem;
+    display: inline-block;
+    transform: rotate(18deg) translateY(30px) translateX(5px);
+    color: rgb(123, 251, 255);
+}
+
+main #content_game #initial .input_players input{
+    padding: .3rem .5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-bottom: 8px;
+    z-index: 4;
+}
+
+main #content_game #initial button {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: .4rem .5rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 400ms;
+    background-color: #fff;
+}
+
+main #content_game #initial button:hover, 
+main #content_game #initial #info:hover, 
+main #content_game #initial #ranking:hover, 
+main #content_game #initial #audio:hover {
+    background: none;
+    border: 2px solid #fff;
+    color: #000;
+} 
+
+main #content_game #initial .settings_infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+main #content_game #initial #ranking, 
+main #content_game #initial #info,
+main #content_game #initial #audio {
+    width: fit-content;
+    width: -moz-max-content;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: .4rem 1rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 400ms;
+    background-color: #fff;
+    color: #000;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #content_game #initial #info {
+    flex: 1;
+    text-align: center;
+}
+
+main #content_game #initial #audio span {
+    display: flex;
+    align-items: center;
+}
+
+main #content_game #initial #audio svg{
+    width: 30px;
+    transform: translateY(-3px);
+}
+
+main #content_game #initial #ranking {
+    margin-right: 0;
+}
+
+main #content_game #initial #ranking svg {
+    width: 28px;
+    height: 32px;
+    fill: #000;
+    transform: translateY(3px);
+}
+
+main  #bio{
+    position: absolute;
+    border: 2px solid #f6f6f6;
+    background-color: #f6f6f67a;
+    border-radius: 40px 0 0 40px;
+    width: 50px;
+    height: 50px;
+    bottom: -2px;
+    right: 20%;
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+main #content_game #game_win {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 60% 20%;
+    gap: 0px 0px;
+    grid-template-areas:
+        "player"
+        "img"
+        "btn";
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+main #content_game #game_win h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:#000 4px -4px, #000 -4px 4px, #000 4px 4px, #000 -4px -4px;
+    color: rgb(169, 156, 248);
+    grid-area: player;
+}
+
+main #content_game #game_win h3 {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    color: rgb(155, 242, 144);
+    text-shadow: #000 2px -2px, #000 -2px 2px, #000 2px 2px, #000 -2px -2px;
+    letter-spacing: .1rem;
+    z-index: 5;
+    animation: scaleTitle 2s infinite;
+}
+
+main #content_game #game_win button {
+    width: 50%;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: .4rem .5rem;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 400ms;
+    background-color: #fff;
+    margin: 0 auto;
+    grid-area: btn;
+}
+
+main #content_game #game_win button:hover {
+    background: none;
+    border: 2px solid #fff;
+    color: #000;
+}
+
+main #content_game #credits {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+    font-size: 1.3rem;
+}
+
+main #content_game #credits h2 {
+    margin: 2px 0 15px 0;
+    text-align: center;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 5px;
+}
+
+span {
+    align-self: flex-end;
+}
+
+main #content_game #credits a {
+    text-decoration: none;
+    color: black;
+    margin: 0 5px 0 5px;
+}
+
+main #bio svg {
+    width: 18px;
+    height: 18px;
+    fill: #000;
+    padding: 8px;
+    transform: translateY(2px);
+    animation: moveUp .5s alternate-reverse infinite ease-in-out;
+}
+
+@keyframes moveUp {
+        from {
+            transform: translateY(2px) translateX(5px);
+        }
+        to {
+            transform: translateY(2px) translateX(0);
+        }
+}
+
+main #content_game #game {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main #content_game #game #btn_close_game {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    transition: transform 400ms;
+    cursor: pointer;
+}
+
+main #content_game #game #btn_close_game:hover {
+    transform: scale(1.2) rotate(180deg);
+}
+
+main #content_game #game #btn_close_game svg{
+    fill: rgba(102, 102, 102, 0.856);
+}
+
+main #content_game #game #timer {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px -1px, rgba(0, 0, 0, 0.5) -1px 1px, rgba(0, 0, 0, 0.5) 2px 2px, rgba(0, 0, 0, 0.5) -2px -2px;
+    align-self: center;
+    transform: translateY(-6.5vh);
+    opacity: .8;
+}
+
+main #content_game #game #timer span {
+    display: flex;
+    align-items: center;
+}
+
+main #content_game #game #timer svg{
+    width: 2rem;
+    height: 2rem;
+    fill: rgb(255, 255, 255);
+    stroke: #000;
+    stroke-width: .7px;
+    margin-right: 8px;
+    opacity: .8;
+}
+
+
+main #content_game #game #tabuleiro  {
+    width: 230px;
+    height: 190px;
+    display: flex;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 255, 0.2);
+    box-shadow: inset -15px -10px 20px rgba(0, 0, 0, 0.377);
+    padding: 0 .6rem;
+    position: relative;
+}
+
+main #content_game #game #tabuleiro .column{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2px;
+    cursor: pointer;
+    transition: background-color 200ms;
+}
+
+main #content_game #game #tabuleiro .column:hover {
+    background-color: rgba(0, 0, 139, 0.3);
+}
+
+main #content_game #game #tabuleiro .column:hover::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--background_color_column_indicator);
+    position: absolute;
+    top: -30px;
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.5),
+                1px 1px 4px rgba(255, 255, 255, 0.7),
+                inset 1px 1px 4px rgba(0, 0, 0, 0.3);
+}   
+
+main #content_game #game #tabuleiro .column.current:hover::before {
+    animation: newDisk .4s linear forwards;
+}
+
+@keyframes newDisk {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main #content_game #game #tabuleiro .column div{
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+main #content_game #game #tabuleiro .column div.red::before{
+    background-color: #e79bfa ;
+}
+
+main #content_game #game #tabuleiro .column div.blue::before{
+    background-color: #4fdb85;
+}
+
+main #content_game #game #tabuleiro .column div.current::before{
+    animation: apperDisk .5s linear;
+}
+
+@keyframes apperDisk {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    75% {
+        transform: translate(-50%, -50%) scale(.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+main #content_game #game #tabuleiro .column div::before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow:  5px 5px 12px rgba(6, 6, 116, 0.616),
+                 -3px -3px 6px #ffffff65,
+                 inset 4px 4px 8px rgba(0, 0, 0, 0.418);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+main #content_game #game #players{
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 210px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main #content_game #game #players svg {
+    width: 1.5rem;
+    fill: rgba(245, 245, 245, 0);
+    stroke-width: 2px;
+    stroke: rgb(255, 255, 255);
+    transition: transform 400ms ease-in-out;
+}
+
+main #content_game #game #players.rotate svg {
+    transform: rotate(180deg);
+}
+
+main #content_game #game #players #player_one_name {
+    color: rgb(231, 155, 250);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px -1px, rgba(0, 0, 0, 0.5) -1px 1px, rgba(0, 0, 0, 0.5) 2px 2px, rgba(0, 0, 0, 0.5) -2px -2px;
+    text-transform: uppercase;
+}
+
+main #content_game #game #players #player_two_name {
+    color:  rgb(141, 230, 175);
+    text-shadow: rgba(0, 0, 0, 0.5) 1px -1px, rgba(0, 0, 0, 0.5) -1px 1px, rgba(0, 0, 0, 0.5) 2px 2px, rgba(0, 0, 0, 0.5) -2px -2px;
+    text-transform: uppercase;
+}
+
+main #content_game #game #players .current_player {
+    transform: scale(1.4);
+    transition: transform 400ms;
+}
+
+main #info_div::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    max-width: 1020px;
+    background: rgba(250, 250, 250, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+    border-radius: 2rem;
+}
+
+main #info_div {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    z-index: 10;
+    max-height: fit-content;
+    width: 90%;
+    max-width: 1020px;
+    border-radius: 2rem;
+    padding: 3rem 1rem;
+}
+
+main #info_div #close, main #credits #close_credits {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    transition: transform 400ms;
+}
+
+main #info_div #close:hover, main #credits #close_credits:hover {
+    transform: rotate(180deg);
+}
+
+main #info_div #close span, main #credits #close_credits span {
+    display: flex;
+}
+
+main #info_div #close span svg, main #credits #close_credits span svg{
+    fill: rgba(77, 77, 77, 0.856);
+    width: 1.5rem;
+}
+
+
+main #info_div article {
+    display: flex;
+    flex-direction: column;
+    max-height: 350px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    text-align: justify;
+    padding: 0 1rem 1rem;
+    overflow: auto;
+}
+
+main #info_div article h4 {
+    margin: 0.5rem 0;
+}
+main #content_game #game_draw {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #content_game #game_draw h3 {
+    font-size: 3rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    color: rgb(255, 104, 129);
+    text-shadow: #000 2px -2px, #000 -2px 2px, #000 2px 2px, #000 -2px -2px;
+    letter-spacing: .1rem;
+    z-index: 5;
+    animation: scaleTitle .7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes scaleTitle {
+
+    0% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(1.2);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-10deg) scale(1);
+    }
+}
+
+main #content_game .reset_game {
+    width: 80%;
+    margin: 1rem auto 0 auto;
+    font-size: 1.2rem;
+    padding: .4rem .5rem;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    transition: all 400ms;
+    background-color: #fff;
+}
+main #ranking_div::before{
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70vh;
+    width: 90%;
+    max-width: 1020px;
+    background: rgba(250, 250, 250, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+    border-radius: 2rem;
+}
+
+main #ranking_div {
+    display: flex;
+    flex-flow: row wrap;
+    position: fixed;
+    z-index: 10;
+    width: 90%;
+    max-height: 70vh;
+    max-width: 1020px;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 15%;
+
+}
+main #ranking_div h1{
+    font-size: 2.5rem;
+    width: 90%;
+    text-align: center;
+    margin: 1rem 0;
+}
+main #ranking_div #closeRanking {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+main #ranking_div #closeRanking span svg {
+    width: 1.5rem;
+}
+main #ranking_div #times {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+main #ranking_div #times span {
+    align-self:  center;
+}
+main #ranking_div #times span span {
+    font-size: 2rem;
+}
+/* INICIAL */
+  
+/* FOOTER */
+footer{}
+/* FOOTER */
+  
+
+/* EXTRAS */
+.apperContainer {
+    animation: apperCont .3s ease-in-out ;
+}
+
+@keyframes apperCont {
+    from {
+        transform: scale(.5);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* para estilizar a scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(13deg, #f9d4ff 14%,#c7ceff 67%);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: #ffffff86;
+    border-radius: 15px;
+    box-shadow: inset 7px 30px 12px #f0f0f0;
+}
+
+
+/* EXTRAS */
+  
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 375px){
+    main #content_game #game #tabuleiro  {
+        width: 300px;
+        height: 240px;
+    }
+
+    main #content_game #game #tabuleiro .column div{
+        width: 32px;
+        height: 32px;
+    }
+
+    main #content_game #game #tabuleiro .column:hover::before {
+        width: 30px;
+        height: 30px;
+        top: -40px;
+        box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.5),
+                    1px 1px 4px rgba(255, 255, 255, 0.7),
+                    inset 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }   
+
+    main #content_game #game #players{
+        max-width: 280px;
+        font-size: 1.5rem;
+    }
+    
+    main #content_game #game_win h1 {
+        font-size: 3rem;
+    }
+
+    
+}
+
+@media only screen and (min-width: 768px){
+    main #content_game  {
+        min-height: 574px;
+    }
+
+    main #content_game #game #tabuleiro  {
+        width: 400px;
+        height: 295px;
+        padding: 0 1rem;
+    }
+
+    main #content_game #game #tabuleiro .column div{
+        width: 42px;
+        height: 42px;
+    }
+
+    main #content_game #game #tabuleiro .column:hover::before {
+        width: 34px;
+        height: 34px;
+        top: -40px;
+    }   
+
+    main #content_game #game #players{
+        font-size: 1.5rem;
+        max-width: 380px;
+    }
+
+    main #content_game #game #players svg {
+        width: 2rem;
+    }
+    main #info_div article {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    main #content_game #game_win h1 {
+        font-size: 4rem;
+    }
+
+    main #content_game #game_win h3 {
+        font-size: 4rem;  
+    }
+
+    main #content_game #game #btn_close_game {
+        width: 28px;
+        height: 28px;
+        top: 20px;
+        right: 20px;
+    }
+
+    main #info_div article {
+        max-height: 450px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    main #content_game #game #tabuleiro  {
+        width: 480px;
+        height: 350px;
+        padding: 0 1rem;
+    }
+
+    main #content_game #game #tabuleiro .column div{
+        width: 50px;
+        height: 50px;
+    }
+
+    main #content_game #game #tabuleiro .column:hover::before {
+        width: 40px;
+        height: 40px;
+        top: -44px;
+    }   
+
+    main #content_game #game #players{
+        max-width: 460px;
+    }
+
+    main #info_div article {
+        max-height: 550px;
+    }
+
+}
+/* MEDIA QUERIES */
